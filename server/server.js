@@ -6,7 +6,7 @@ const WebSocket = require('ws');
 const socketHandler = require('./sockets/socketHandler');
 
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
 
 // Configurar middleware para parsing de JSON e servir arquivos estáticos
 app.use(express.json());
