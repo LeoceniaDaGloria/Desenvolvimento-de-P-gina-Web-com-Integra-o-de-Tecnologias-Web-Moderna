@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat SoluStyle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Estilização geral */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e6f0fa, #f8f9fa);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, #007bff, #00d4ff);
+    }
+
+    /* Chat - Estilo SoluStyle */
+    .chat-container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: linear-gradient(180deg, #ffffff, #e6f0fa);
+      border: 10px solid #007bff;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+      padding: 20px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #chatBox {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+    }
+
+    .chat-message {
+      margin-bottom: 15px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      max-width: 75%;
+      animation: fadeInScale 0.4s ease-in;
+      font-size: 15px;
+      line-height: 1.5;
+      position: relative;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    .chat-message:hover .reply-button {
+      display: block;
+    }
+
+    .reply-button {
+      display: none;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .chat-message.user {
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-message.user:nth-child(odd) {
+      background: #000;
+      color: #fff;
+    }
+
+    .chat-message.user:nth-child(even) {
+      background: #1e3a8a;
+      color: #fff;
+    }
+
+    .chat-message.system {
+      background: #1b5e20;
+      color: #000;
+      margin-right: auto;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-message.system:nth-child(even) {
+      background: #2e7d32;
+      color: #000;
+    }
+
+    .chat-message.admin {
+      background: #004d40;
+      color: #000;
+      margin-right: auto;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-message .timestamp {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 5px;
+      text-align: right;
+    }
+
+    .quoted-message {
+      background: #f1f1f1;
+      border-left: 3px solid #007bff;
+      padding: 8px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #333;
+      border-radius: 8px;
+    }
+
+    #replyPreview {
+      background: #f8f9fa;
+      border: 1px solid #ced4da;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+    }
+
+    #cancelReply {
+      background: #dc3545;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 12px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: translateY(10px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .chat-form {
+      display: flex;
+      padding: 12px;
+      background: #fff;
+      border-top: 2px solid #007bff;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .chat-form .input-group {
+      flex: 1;
+    }
+
+    .chat-form input {
+      border-radius: 25px;
+      border: 1px solid #ced4da;
+      padding: 12px 20px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .chat-form input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0,123,255,0.3);
+    }
+
+    .chat-form button {
+      border-radius: 25px;
+      padding: 12px 25px;
+      font-size: 15px;
+      margin-left: 10px;
+      background: #ff6f61;
+      border: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .chat-form button:hover {
+      background: #e65b50;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #343a40;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="/">SoluStyle</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/principal.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/chat.html">Chat</a></li>
+          <li class="nav-item"><a class="nav-link" href="/stock.html">Estoque</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin.html">Admin</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Chat Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Chat SoluStyle</h2>
+      <div class="chat-container">
+        <div id="chatBox"></div>
+        <div id="replyPreview"></div>
+        <form id="chatForm" class="chat-form">
+          <div class="input-group">
+            <input type="text" id="usuario" class="form-control" placeholder="Seu nome" required>
+            <input type="text" id="cidade" class="form-control" placeholder="Sua cidade (opcional)">
+            <input type="text" id="mensagem" class="form-control" placeholder="Digite sua mensagem" required>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>© 2025 SoluStyle. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/websocket.js"></script>
+</body>
+</html>
