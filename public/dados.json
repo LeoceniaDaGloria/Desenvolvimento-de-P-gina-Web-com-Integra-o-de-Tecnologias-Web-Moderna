@@ -111,15 +111,15 @@
       "id": 1,
       "produto": "Camiseta",
       "quantidade": 0,
-      "preco": 20.08,
-      "ultimaAtualizacao": "2025-05-16T06:00:32.327Z"
+      "preco": 10.79,
+      "ultimaAtualizacao": "2025-05-16T06:55:28.598Z"
     },
     {
       "id": 2,
       "produto": "Calça",
       "quantidade": 0,
-      "preco": 40.43,
-      "ultimaAtualizacao": "2025-05-16T06:00:32.327Z"
+      "preco": 47.79,
+      "ultimaAtualizacao": "2025-05-16T06:55:28.598Z"
     }
   ]
 }
