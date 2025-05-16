@@ -110,14 +110,14 @@
     {
       "id": 1,
       "produto": "Camiseta",
-      "quantidade": 10,
+      "quantidade": 15000,
       "preco": 10.79,
       "ultimaAtualizacao": "2025-05-16T06:55:28.598Z"
     },
     {
       "id": 2,
       "produto": "Calça",
-      "quantidade": 34,
+      "quantidade": 10000,
       "preco": 47.79,
       "ultimaAtualizacao": "2025-05-16T06:55:28.598Z"
     }
