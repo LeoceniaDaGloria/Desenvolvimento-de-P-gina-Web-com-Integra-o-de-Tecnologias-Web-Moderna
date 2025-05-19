@@ -1,0 +1,125 @@
+{
+  "contato": [
+    {
+      "id": 1,
+      "nome": "Maria",
+      "email": "Leocenia@email",
+      "mensagem": "oi\n",
+      "timestamp": "2025-05-16T05:38:49.502Z"
+    }
+  ],
+  "chat": [
+    {
+      "id": 1,
+      "usuario": "Administrador",
+      "mensagem": "Administrador: oi",
+      "sender": "admin",
+      "timestamp": "07:03"
+    },
+    {
+      "id": 2,
+      "usuario": "Tonia",
+      "mensagem": "Tonia: oi",
+      "sender": "user",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 3,
+      "usuario": "Sistema",
+      "mensagem": "Olá Tonia de Maputo, seja bem-vindo à SoluStyle! Você pode fazer até 2 perguntas.",
+      "sender": "system",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 4,
+      "usuario": "Sistema",
+      "mensagem": "As questões que posso responder são: 1. Como funciona o estoque? 2. Como funciona o cadastro de usuários?",
+      "sender": "system",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 5,
+      "usuario": "Tonia",
+      "mensagem": "Tonia: como funciona o estoque",
+      "sender": "user",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 6,
+      "usuario": "Sistema",
+      "mensagem": "Temos camisetas e calças disponíveis. Veja os detalhes na página de Estoque! (1 perguntas restantes)",
+      "sender": "system",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 7,
+      "usuario": "Tonia",
+      "mensagem": "Tonia: como funciona o cadrastro  usuarios",
+      "sender": "user",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 8,
+      "usuario": "Sistema",
+      "mensagem": "O cadastro de usuários pode ser feito na página de Contato, preenchendo o formulário. Após o envio, você receberá uma confirmação em até 24 horas! (0 pergunta restante)",
+      "sender": "system",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 9,
+      "usuario": "Tonia",
+      "mensagem": "Tonia: ok",
+      "sender": "user",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 10,
+      "usuario": "Sistema",
+      "mensagem": "Você atingiu o limite de 2 perguntas. Conectando ao administrador...",
+      "sender": "system",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 11,
+      "usuario": "Sistema",
+      "mensagem": "Tonia foi conectado ao administrador.",
+      "sender": "system",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 12,
+      "usuario": "Tonia",
+      "mensagem": "Tonia: oi",
+      "sender": "user",
+      "timestamp": "07:39"
+    },
+    {
+      "id": 13,
+      "usuario": "Administrador",
+      "mensagem": "Administrador: ola",
+      "sender": "admin",
+      "timestamp": "07:40",
+      "replyTo": {
+        "id": "12",
+        "usuario": "\n              Tonia",
+        "mensagem": "Responder"
+      }
+    }
+  ],
+  "estoque": [
+    {
+      "id": 1,
+      "produto": "Camiseta",
+      "quantidade": 15000,
+      "preco": 10.79,
+      "ultimaAtualizacao": "2025-05-16T06:55:28.598Z"
+    },
+    {
+      "id": 2,
+      "produto": "Calça",
+      "quantidade": 10001,
+      "preco": 47.79,
+      "ultimaAtualizacao": "2025-05-16T06:55:28.598Z"
+    }
+  ]
+}
